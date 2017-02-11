@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   // requests the selected business's info from API
+  // passed as props through BusinessList to BusinessListItem
   getBusinessInfo(busId) {
     BusinessInfo(busId, (busDetails) => {
       console.log('business details are: ', busDetails);
@@ -39,17 +40,38 @@ class App extends Component {
     })
   }
 
-  render() {
-    return (
-      <div>
-        <h2>OL Business Details</h2>
-        <BusinessDetail
-          business={this.state.selectedBusiness}
-        />
+  // resets selectedBusiness to null
+  // passed as props to BusinessDetail
+  returnToList() {
+    this.setState({
+      selectedBusiness: null
+    })
+  }
+
+  // renders either business list or details based on state
+  renderBusinessListOrDetails() {
+    if(this.state.selectedBusiness === null) {
+      return (
         <BusinessList
           businessList={this.state.businessList}
           onBusinessSelect={selectedBusiness => this.getBusinessInfo(selectedBusiness.id)}
         />
+      )
+    } else {
+      return (
+        <BusinessDetail
+          returnToList={() => this.returnToList()}
+          business={this.state.selectedBusiness}
+        />
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>OL Business Details</h2>
+        {this.renderBusinessListOrDetails()}
       </div>
     );
   }
