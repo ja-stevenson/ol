@@ -13,3 +13,33 @@ div {
 .return-button {
   float: right;
 }
+
+.pagination {
+  float: left;
+}
+
+.pagination ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination li {
+  display: inline;
+}
+
+.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+}
+
+.pagination li.active a {
+  background-color: #788;
+  color: #000;
+}
+
+.pagination li:hover:not(.active) a {
+  background-color: #333;
+  color: #eee;
+}
