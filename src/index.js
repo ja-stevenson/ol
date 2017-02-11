@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import BusinessSearch from './requests/business_list'
+import BusinessSearch from './requests/business_list';
+import BusinessList from './components/business_list';
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +25,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>Hello!!</div>
+      <div>
+        <h2>OL Business Details</h2>
+        <BusinessList
+        businessList={this.state.businessList} />
+      </div>
     );
   }
 }
