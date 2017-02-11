@@ -29,7 +29,7 @@ react-js-pagination
 
 ## Authors
 
-* **Jimmy Stevenson** - *Initial work* - 
+* **Jimmy Stevenson**
 
 ## License
 
