@@ -43,7 +43,7 @@ class App extends Component {
       this.setState({
         selectedBusiness: busDetails
       }, () => {
-        localStorage.setItem('selectedBusiness', JSON.stringify(busInfo));
+        localStorage.setItem('selectedBusiness', JSON.stringify(busDetails));
       })
     })
   }
