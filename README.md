@@ -1,6 +1,6 @@
 # ol
 
-Project of OwnLocal in which businesses are searched for in a paginated list style, with functionality to click a business to see their details.
+Project for OwnLocal in which businesses are searched for in a paginated list style, with functionality to click a business to see their details.
 
 ## Getting Started
 

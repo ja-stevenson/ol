@@ -105,5 +105,3 @@ ReactDOM.render(
   <App />
   , document.querySelector('.entry')
 );
-
-export default App;
