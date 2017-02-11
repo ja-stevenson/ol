@@ -29,6 +29,8 @@ react-js-pagination
 
 Webpack
 
+Enzyme/Jest
+
 ## Authors
 
 * **Jimmy Stevenson**
