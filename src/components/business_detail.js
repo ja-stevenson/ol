@@ -3,12 +3,6 @@ import React from 'react';
 const BusinessDetail = (props) => {
   console.log('the business is: ', props.business);
 
-  if(props.business === null){
-    return(
-      <div>Loading...</div>
-    )
-  }
-
   const bus = props.business.data;
 
   return (

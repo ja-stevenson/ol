@@ -13,10 +13,10 @@ class App extends Component {
 
     this.state = {
       businessList: [],
-      selectedBusiness: null,
+      selectedBusiness: JSON.parse(localStorage.getItem('selectedBusiness')) || null,
       pages: null,
       nextPage: null,
-      currentPage: 1
+      currentPage: localStorage.getItem('currentPage') || 1
     };
 
     this.getBusinessList(this.state.currentPage);
@@ -31,7 +31,7 @@ class App extends Component {
       this.setState({
         businessList: busList,
         pages: numPages
-      }, () => {console.log('list of businesses in state is: ', this.state.businessList);})
+      })
     })
   }
 
@@ -42,17 +42,20 @@ class App extends Component {
       console.log('business details are: ', busDetails);
       this.setState({
         selectedBusiness: busDetails
+      }, () => {
+        localStorage.setItem('selectedBusiness', JSON.stringify(busInfo));
       })
     })
   }
 
-  // updates the current Page
+  // updates the current Page and stores that in localStorage
   // passed as props to BusinessList for Pagination
   updateCurrentPage(pageNum) {
     this.setState({
       currentPage: pageNum
     }, () => {
       this.getBusinessList(this.state.currentPage);
+      localStorage.setItem('currentPage', this.state.currentPage);
     })
   }
 
@@ -61,6 +64,8 @@ class App extends Component {
   returnToList() {
     this.setState({
       selectedBusiness: null
+    }, () => {
+      localStorage.setItem('selectedBusiness', this.state.selectedBusiness);
     })
   }
 
