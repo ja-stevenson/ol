@@ -93,7 +93,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="foo">
         <h2>OL Business Details</h2>
         {this.renderBusinessListOrDetails()}
       </div>
@@ -105,3 +105,5 @@ ReactDOM.render(
   <App />
   , document.querySelector('.entry')
 );
+
+export default App;

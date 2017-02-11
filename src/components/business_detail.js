@@ -1,12 +1,11 @@
 import React from 'react';
 
 const BusinessDetail = (props) => {
-  console.log('the business is: ', props.business);
 
   const bus = props.business.data;
 
   return (
-    <div>
+    <div className="bus-detail">
       <button className="return-button btn btn-primary" onClick={props.returnToList}>Return To List</button>
       <br />
       <br />

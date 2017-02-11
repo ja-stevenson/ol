@@ -27,6 +27,8 @@ Axios
 
 react-js-pagination
 
+Webpack
+
 ## Authors
 
 * **Jimmy Stevenson**
