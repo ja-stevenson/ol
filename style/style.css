@@ -20,6 +20,10 @@ div {
   font-size: 22px;
 }
 
+.ol-img {
+  float: left;
+}
+
 .pagination {
   float: left;
 }
