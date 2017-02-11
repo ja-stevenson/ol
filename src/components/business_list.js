@@ -22,11 +22,11 @@ const BusinessList = (props) => {
         nextPageText='next'
         firstPageText='first'
         lastPageText='last'
-        activePage={1}
+        activePage={props.activePage}
         itemsCountPerPage={50}
-        totalItemsCount={5000}
+        totalItemsCount={props.pages * 50}
         pageRangeDisplayed={9}
-        onChange={console.log('hi')} />
+        onChange={props.updateCurrentPage} />
     </div>
   )
 }

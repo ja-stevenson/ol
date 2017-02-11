@@ -13,18 +13,24 @@ class App extends Component {
 
     this.state = {
       businessList: [],
-      selectedBusiness: null
+      selectedBusiness: null,
+      pages: null,
+      nextPage: null,
+      currentPage: 1
     };
 
-    this.getBusinessList();
+    this.getBusinessList(this.state.currentPage);
   }
 
-  // requests the list of businesses from API
-  getBusinessList() {
-    BusinessSearch((busObj) => {
+  // requests the list of businesses from API and sets values for Pagination in BusinessList
+  getBusinessList(pageNum) {
+    BusinessSearch(pageNum, (busObj) => {
       let busList = busObj.data.businesses;
+      let lastPage = busObj.data.pages.last;
+      let numPages = lastPage ? Number(lastPage.substring(lastPage.indexOf('page=') + 5)) : 1000;
       this.setState({
-        businessList: busList
+        businessList: busList,
+        pages: numPages
       }, () => {console.log('list of businesses in state is: ', this.state.businessList);})
     })
   }
@@ -37,6 +43,16 @@ class App extends Component {
       this.setState({
         selectedBusiness: busDetails
       })
+    })
+  }
+
+  // updates the current Page
+  // passed as props to BusinessList for Pagination
+  updateCurrentPage(pageNum) {
+    this.setState({
+      currentPage: pageNum
+    }, () => {
+      this.getBusinessList(this.state.currentPage);
     })
   }
 
@@ -53,6 +69,9 @@ class App extends Component {
     if(this.state.selectedBusiness === null) {
       return (
         <BusinessList
+          activePage={this.state.currentPage}
+          updateCurrentPage={currentPage => this.updateCurrentPage(currentPage)}
+          pages={this.state.pages}
           businessList={this.state.businessList}
           onBusinessSelect={selectedBusiness => this.getBusinessInfo(selectedBusiness.id)}
         />
