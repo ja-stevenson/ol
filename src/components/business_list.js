@@ -1,14 +1,19 @@
 import React from 'react';
+import BusinessListItem from './business_list_item';
 
 const BusinessList = (props) => {
   console.log('list from parent is: ', props.businessList);
   const businesses = props.businessList.map((business) => {
-    console.log('each business is: ', business)
+    return <BusinessListItem
+      key={business.uuid}
+      business={business} />
   })
 
   return (
     <div>
-      Inside the list!.
+      <ul className="list-group">
+        {businesses}
+      </ul>
     </div>
   )
 }
