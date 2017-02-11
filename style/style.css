@@ -1,0 +1,15 @@
+div {
+  white-space: pre;
+}
+
+.list-group-item {
+  cursor: pointer;
+  background-color: #eee;
+  display: inline;
+  float: left;
+  width: 300px;
+}
+
+.return-button {
+  float: right;
+}
