@@ -93,7 +93,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="foo">
+      <div>
         <h2>OL Business Details</h2>
         {this.renderBusinessListOrDetails()}
       </div>

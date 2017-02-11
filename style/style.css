@@ -6,6 +6,14 @@ div {
   white-space: pre;
 }
 
+.btn {
+  background-color: #16a086;
+}
+
+.btn:hover {
+  background-color: #34314b;
+}
+
 .list-group-item {
   margin: 2px;
   cursor: pointer;
@@ -13,6 +21,11 @@ div {
   display: inline;
   float: left;
   width: 300px;
+}
+
+.list-group-item:hover {
+  background-color: #16a086;
+  color: white;
 }
 
 .return-button {
@@ -50,11 +63,11 @@ div {
 }
 
 .pagination li.active a {
-  background-color: #788;
-  color: #000;
+  background-color: #34314b;
+  color: white;
 }
 
 .pagination li:hover:not(.active) a {
-  background-color: #333;
-  color: #eee;
+  background-color: #16a086;
+  color: white;
 }
