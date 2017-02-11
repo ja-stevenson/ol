@@ -22,7 +22,9 @@ From the main directory just type in 'npm test'
 ## Built With
 
 React
+
 Axios
+
 react-js-pagination
 
 ## Authors
