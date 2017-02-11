@@ -1,10 +1,10 @@
 import React from 'react';
 
-const BusinessListItem = ({business}) => {
+const BusinessListItem = ({business, onBusinessSelect}) => {
   const businessID = business.id;
 
   return (
-    <li className="list-group-item">
+    <li onClick={() => onBusinessSelect(business)} className="list-group-item">
       {business.name}
     </li>
   );

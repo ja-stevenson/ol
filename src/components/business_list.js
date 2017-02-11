@@ -5,6 +5,7 @@ const BusinessList = (props) => {
   console.log('list from parent is: ', props.businessList);
   const businesses = props.businessList.map((business) => {
     return <BusinessListItem
+      onBusinessSelect={props.onBusinessSelect}
       key={business.uuid}
       business={business} />
   })
