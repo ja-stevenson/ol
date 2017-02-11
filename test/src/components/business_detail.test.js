@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 
 import BusinessDetail from '../../../src/components/business_detail'
 
-describe('A suite', function() {
+describe('BusinessDetail', function() {
   const business = {
     data: {
       address: "43496 Elenora Plaza Apt. 007",

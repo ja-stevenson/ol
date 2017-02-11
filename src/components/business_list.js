@@ -3,7 +3,7 @@ import BusinessListItem from './business_list_item';
 import Pagination from 'react-js-pagination';
 
 const BusinessList = (props) => {
-  console.log('list from parent is: ', props.businessList);
+
   const businesses = props.businessList.map((business) => {
     return <BusinessListItem
       onBusinessSelect={props.onBusinessSelect}
@@ -12,7 +12,7 @@ const BusinessList = (props) => {
   })
 
   return (
-    <div>
+    <div className="bus-list">
       <ul className="list-group">
         {businesses}
       </ul>
