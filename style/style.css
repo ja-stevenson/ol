@@ -40,6 +40,7 @@ div {
 
 .ol-img {
   float: left;
+  cursor: pointer;
 }
 
 .pagination {

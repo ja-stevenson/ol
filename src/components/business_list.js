@@ -27,7 +27,7 @@ const BusinessList = (props) => {
         totalItemsCount={props.pages * 50}
         pageRangeDisplayed={9}
         onChange={props.updateCurrentPage} />
-      <img className="ol-img" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTJAtzGDIuAddcpYED5NIhIcKu10erWD74zYdoGHE-lWGDOvvf-"></img>
+      <a className="ol-img" href="http://www.ownlocal.com/"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTJAtzGDIuAddcpYED5NIhIcKu10erWD74zYdoGHE-lWGDOvvf-" /></a>
     </div>
   )
 }
