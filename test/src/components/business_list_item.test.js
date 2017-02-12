@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import BusinessListItem from '../../../src/components/business_list_item'
 
@@ -40,5 +41,14 @@ describe('BusinessListItem', function() {
       onBusinessSelect={() => {}}
       key={business.data.uuid}
       business={business} />).text()).toEqual('');
+  });
+
+  it('renders details', () => {
+    const component = renderer.create(<BusinessListItem
+      onBusinessSelect={() => {}}
+      key={business.data.uuid}
+      business={business} />);
+    const json = component.toJSON();
+    expect(json).toMatchSnapshot();
   });
 });

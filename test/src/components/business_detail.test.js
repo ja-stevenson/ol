@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import BusinessDetail from '../../../src/components/business_detail'
 
@@ -48,5 +49,12 @@ http://hackett-dare.net/
 Created At: 2014-09-27T10:36:09.000Z
 Id: 828
 Uuid: 52ea24ef-6984-4b2e-a2bd-b58eace5495b`);
+  });
+
+  it('BusinessDetail renders details', () => {
+    const component = renderer.create(<BusinessDetail returnToList={() => {}}
+      business={business} />);
+    const json = component.toJSON();
+    expect(json).toMatchSnapshot();
   });
 });

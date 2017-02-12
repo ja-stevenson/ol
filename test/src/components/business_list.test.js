@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import BusinessList from '../../../src/components/business_list'
 
@@ -42,5 +43,17 @@ describe('BusinessList', function() {
           businessList={[]}
           onBusinessSelect={() => {}}
         />).text()).toEqual('firstprev123456789nextlast');
+  });
+
+  it('renders details', () => {
+    const component = renderer.create(<BusinessList
+          activePage={1}
+          updateCurrentPage={() => {}}
+          pages={1000}
+          businessList={[]}
+          onBusinessSelect={() => {}}
+        />);
+    const json = component.toJSON();
+    expect(json).toMatchSnapshot();
   });
 });

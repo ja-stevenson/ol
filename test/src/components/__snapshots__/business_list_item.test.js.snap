@@ -1,0 +1,5 @@
+exports[`BusinessListItem renders details 1`] = `
+<li
+  className="list-group-item"
+  onClick={[Function]} />
+`;

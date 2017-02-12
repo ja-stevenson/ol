@@ -21,6 +21,7 @@ div {
   display: inline;
   float: left;
   width: 300px;
+  text-align: center;
 }
 
 .list-group-item:hover {
